@@ -1,0 +1,1107 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+
+    background: #0b0c0f;
+
+    color: #f5f2eb;
+
+    font-family:
+        Arial,
+        sans-serif;
+
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+.navbar {
+
+    height: 75px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding:
+        0 7%;
+
+    border-bottom:
+        1px solid #272a30;
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 10;
+
+    background:
+        rgba(11,12,15,.92);
+
+    backdrop-filter:
+        blur(15px);
+
+}
+
+
+.logo {
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+}
+
+
+.logo:first-letter {
+
+    color: #e8b76b;
+
+}
+
+
+.navbar nav {
+
+    display: flex;
+
+    gap: 35px;
+
+}
+
+
+.navbar nav a {
+
+    color: #aaa;
+
+    text-decoration: none;
+
+}
+
+
+.login-button {
+
+    background: transparent;
+
+    color: white;
+
+    border:
+        1px solid #444;
+
+    padding:
+        10px 20px;
+
+    border-radius: 30px;
+
+    cursor: pointer;
+
+}
+
+
+/* HERO */
+
+.hero {
+
+    min-height:
+        650px;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    align-items: center;
+
+    gap: 80px;
+
+    padding:
+        80px 8%;
+
+}
+
+
+.eyebrow {
+
+    color:
+        #e8b76b;
+
+    letter-spacing:
+        3px;
+
+    font-size:
+        11px;
+
+    font-weight:
+        bold;
+
+}
+
+
+.hero h1 {
+
+    font-size:
+        clamp(50px,6vw,80px);
+
+    line-height:
+        1;
+
+    margin:
+        20px 0;
+
+}
+
+
+.hero h1 span {
+
+    color:
+        #aaa59b;
+
+}
+
+
+.hero-text > p:not(.eyebrow) {
+
+    color:
+        #999;
+
+    line-height:
+        1.8;
+
+    max-width:
+        550px;
+
+    margin-bottom:
+        30px;
+
+}
+
+
+.main-button {
+
+    display:
+        inline-block;
+
+    background:
+        #e8b76b;
+
+    color:
+        #16130e;
+
+    border:
+        none;
+
+    padding:
+        14px 25px;
+
+    border-radius:
+        30px;
+
+    font-weight:
+        bold;
+
+    cursor:
+        pointer;
+
+    text-decoration:
+        none;
+
+}
+
+
+.secondary-button {
+
+    background:
+        transparent;
+
+    color:
+        white;
+
+    border:
+        1px solid #444;
+
+    padding:
+        14px;
+
+    border-radius:
+        10px;
+
+    cursor:
+        pointer;
+
+}
+
+
+.full {
+    width: 100%;
+}
+
+
+/* HERO SEATS */
+
+.hero-box {
+
+    background:
+        linear-gradient(
+            145deg,
+            #1c2026,
+            #0d0f13
+        );
+
+    border:
+        1px solid #292d34;
+
+    padding:
+        40px;
+
+    border-radius:
+        25px;
+
+}
+
+
+.screen,
+.big-screen {
+
+    height:
+        8px;
+
+    background:
+        #eee4d0;
+
+    border-radius:
+        50%;
+
+    text-align:
+        center;
+
+    margin-bottom:
+        50px;
+
+    box-shadow:
+        0 0 30px
+        #e8b76b66;
+
+}
+
+
+.mini-seats {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(10,1fr);
+
+    gap:
+        8px;
+
+}
+
+
+.mini-seats span {
+
+    height:
+        15px;
+
+    background:
+        #343941;
+
+    border-radius:
+        4px;
+
+}
+
+
+.hero-box p {
+
+    color:
+        #888;
+
+    margin-top:
+        25px;
+
+}
+
+
+/* MOVIES */
+
+.movies-section {
+
+    padding:
+        100px 8%;
+
+}
+
+
+.movies-section h2 {
+
+    font-size:
+        45px;
+
+    margin:
+        10px 0 40px;
+
+}
+
+
+.movie-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:
+        25px;
+
+}
+
+
+.movie {
+
+    background:
+        #13161b;
+
+    border:
+        1px solid #292d34;
+
+    border-radius:
+        20px;
+
+    overflow:
+        hidden;
+
+}
+
+
+.poster {
+
+    height:
+        350px;
+
+    background-size:
+        cover;
+
+    background-position:
+        center;
+
+}
+
+
+.movie-info {
+
+    padding:
+        22px;
+
+}
+
+
+.movie-info h3 {
+
+    font-size:
+        25px;
+
+    margin:
+        8px 0;
+
+}
+
+
+.movie-info p {
+
+    color:
+        #888;
+
+    line-height:
+        1.6;
+
+    font-size:
+        14px;
+
+}
+
+
+.showtimes {
+
+    display:
+        flex;
+
+    gap:
+        8px;
+
+    flex-wrap:
+        wrap;
+
+    margin-top:
+        20px;
+
+}
+
+
+.showtime {
+
+    background:
+        #1d2127;
+
+    border:
+        1px solid #343940;
+
+    color:
+        white;
+
+    padding:
+        9px 12px;
+
+    border-radius:
+        8px;
+
+    cursor:
+        pointer;
+
+}
+
+
+.showtime:hover {
+
+    border-color:
+        #e8b76b;
+
+    color:
+        #e8b76b;
+
+}
+
+
+/* HOW */
+
+.how {
+
+    padding:
+        90px 8%;
+
+    background:
+        #111419;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:
+        80px;
+
+}
+
+
+.how h2 {
+
+    font-size:
+        45px;
+
+    margin-top:
+        10px;
+
+}
+
+
+.steps {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:
+        20px;
+
+}
+
+
+.steps div {
+
+    border-left:
+        1px solid #333;
+
+    padding:
+        15px;
+
+}
+
+
+.steps span {
+
+    color:
+        #e8b76b;
+
+}
+
+
+.steps h3 {
+
+    margin:
+        20px 0 10px;
+
+}
+
+
+.steps p {
+
+    color:
+        #888;
+
+    line-height:
+        1.6;
+
+}
+
+
+/* MODALS */
+
+.modal {
+
+    position:
+        fixed;
+
+    inset:
+        0;
+
+    background:
+        #000c;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    padding:
+        20px;
+
+    z-index:
+        50;
+
+}
+
+
+.hidden {
+    display: none !important;
+}
+
+
+.modal-box,
+.booking-modal,
+.ticket {
+
+    background:
+        #14171c;
+
+    border:
+        1px solid #30343b;
+
+    border-radius:
+        22px;
+
+    padding:
+        30px;
+
+    width:
+        min(100%,450px);
+
+    max-height:
+        92vh;
+
+    overflow:
+        auto;
+
+    position:
+        relative;
+
+}
+
+
+.booking-modal {
+
+    width:
+        min(100%,1000px);
+
+}
+
+
+.close {
+
+    position:
+        absolute;
+
+    right:
+        18px;
+
+    top:
+        10px;
+
+    background:
+        none;
+
+    border:
+        none;
+
+    color:
+        #aaa;
+
+    font-size:
+        30px;
+
+    cursor:
+        pointer;
+
+}
+
+
+.modal h2 {
+
+    font-size:
+        32px;
+
+    margin:
+        10px 0 25px;
+
+}
+
+
+input {
+
+    width:
+        100%;
+
+    padding:
+        14px;
+
+    margin:
+        7px 0;
+
+    background:
+        #0d0f12;
+
+    border:
+        1px solid #333;
+
+    color:
+        white;
+
+    border-radius:
+        10px;
+
+}
+
+
+.tabs {
+
+    display:
+        flex;
+
+    gap:
+        5px;
+
+}
+
+
+.tabs button {
+
+    flex:
+        1;
+
+    padding:
+        10px;
+
+    background:
+        #1b1f24;
+
+    border:
+        1px solid #333;
+
+    color:
+        #aaa;
+
+}
+
+
+.tabs .active {
+
+    color:
+        white;
+
+    border-color:
+        #e8b76b;
+
+}
+
+
+/* SEATS */
+
+.legend {
+
+    display:
+        flex;
+
+    gap:
+        20px;
+
+    color:
+        #aaa;
+
+    margin:
+        20px 0;
+
+    font-size:
+        13px;
+
+}
+
+
+.seat-map {
+
+    max-width:
+        700px;
+
+    margin:
+        auto;
+
+}
+
+
+.seat-row {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        25px repeat(10,1fr);
+
+    gap:
+        7px;
+
+    margin:
+        7px 0;
+
+}
+
+
+.row-label {
+
+    color:
+        #777;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+}
+
+
+.seat {
+
+    aspect-ratio:
+        1.3;
+
+    border:
+        1px solid #363b43;
+
+    background:
+        #22272e;
+
+    color:
+        #aaa;
+
+    border-radius:
+        6px;
+
+    cursor:
+        pointer;
+
+}
+
+
+.seat:hover {
+
+    border-color:
+        #e8b76b;
+
+}
+
+
+.seat.selected {
+
+    background:
+        #e8b76b;
+
+    color:
+        #111;
+
+}
+
+
+.seat.booked {
+
+    background:
+        #c96e6e;
+
+    color:
+        #321313;
+
+    cursor:
+        not-allowed;
+
+}
+
+
+/* BOOKING */
+
+.booking-bottom {
+
+    border-top:
+        1px solid #333;
+
+    margin-top:
+        30px;
+
+    padding-top:
+        25px;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:
+        30px;
+
+}
+
+
+.snacks label {
+
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+    padding:
+        13px 0;
+
+    border-bottom:
+        1px solid #292d34;
+
+    color:
+        #ccc;
+
+}
+
+
+.snacks input {
+
+    width:
+        auto;
+
+}
+
+
+.snacks small {
+
+    display:
+        block;
+
+    color:
+        #888;
+
+    margin-top:
+        15px;
+
+}
+
+
+.snacks strong {
+
+    color:
+        #e8b76b;
+
+}
+
+
+.summary {
+
+    background:
+        #0d0f12;
+
+    padding:
+        20px;
+
+    border-radius:
+        15px;
+
+}
+
+
+.summary p {
+
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+    color:
+        #999;
+
+    margin:
+        12px 0;
+
+}
+
+
+.summary h3 {
+
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+}
+
+
+.summary h3 span {
+
+    color:
+        #e8b76b;
+
+}
+
+
+.demo {
+
+    color:
+        #d6aa5f;
+
+    font-size:
+        12px;
+
+    margin-top:
+        12px;
+
+}
+
+
+/* TICKET */
+
+.ticket {
+
+    text-align:
+        center;
+
+}
+
+
+.ticket-card {
+
+    background:
+        #f4f1e9;
+
+    color:
+        #111;
+
+    padding:
+        25px;
+
+    border-radius:
+        15px;
+
+    margin:
+        20px 0;
+
+}
+
+
+.ticket-card img {
+
+    width:
+        180px;
+
+    display:
+        block;
+
+    margin:
+        20px auto;
+
+}
+
+
+/* MOBILE */
+
+@media(max-width:850px) {
+
+    .navbar nav {
+        display: none;
+    }
+
+
+    .hero {
+
+        grid-template-columns:
+            1fr;
+
+        padding:
+            70px 6%;
+
+    }
+
+
+    .movie-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .how {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .steps {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .booking-bottom {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+}

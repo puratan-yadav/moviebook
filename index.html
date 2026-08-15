@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        CineBook — Movie Booking
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+<body>
+
+
+<header class="navbar">
+
+    <div class="logo">
+        ◆ CINEBOOK
+    </div>
+
+    <nav>
+
+        <a href="#movies">
+            Movies
+        </a>
+
+        <a href="#how">
+            How it works
+        </a>
+
+    </nav>
+
+    <button
+        class="login-button"
+        id="loginBtn"
+    >
+        Login
+    </button>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="hero-text">
+
+        <p class="eyebrow">
+            YOUR SEAT. YOUR SHOW.
+        </p>
+
+        <h1>
+            Movies feel better
+            <br>
+            <span>on the big screen.</span>
+        </h1>
+
+        <p>
+            Discover movies, select your exact seat,
+            add snacks and receive your digital ticket.
+        </p>
+
+        <a
+            href="#movies"
+            class="main-button"
+        >
+            Explore Movies →
+        </a>
+
+    </div>
+
+
+    <div class="hero-box">
+
+        <div class="screen">
+            SCREEN
+        </div>
+
+        <div
+            class="mini-seats"
+            id="miniSeats"
+        ></div>
+
+        <p>
+            🟢 Live seat availability
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- MOVIES -->
+
+<section
+    class="movies-section"
+    id="movies"
+>
+
+    <p class="eyebrow">
+        NOW SHOWING
+    </p>
+
+    <h2>
+        Choose your movie
+    </h2>
+
+    <div
+        class="movie-grid"
+        id="movieGrid"
+    ></div>
+
+</section>
+
+
+
+<!-- HOW -->
+
+<section
+    class="how"
+    id="how"
+>
+
+    <div>
+
+        <p class="eyebrow">
+            SIMPLE BY DESIGN
+        </p>
+
+        <h2>
+            From movie to ticket
+            <br>
+            in a few steps.
+        </h2>
+
+    </div>
+
+
+    <div class="steps">
+
+        <div>
+
+            <span>
+                01
+            </span>
+
+            <h3>
+                Choose a show
+            </h3>
+
+            <p>
+                Pick your movie and showtime.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <span>
+                02
+            </span>
+
+            <h3>
+                Select seats
+            </h3>
+
+            <p>
+                Choose your preferred seats.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <span>
+                03
+            </span>
+
+            <h3>
+                Confirm
+            </h3>
+
+            <p>
+                Add snacks and confirm your ticket.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- LOGIN MODAL -->
+
+<div
+    class="modal hidden"
+    id="loginModal"
+>
+
+    <div class="modal-box">
+
+        <button
+            class="close"
+            data-close
+        >
+            ×
+        </button>
+
+        <p class="eyebrow">
+            ACCOUNT
+        </p>
+
+        <h2>
+            Login
+        </h2>
+
+
+        <div class="tabs">
+
+            <button
+                class="active"
+                data-method="phone"
+            >
+                Mobile
+            </button>
+
+            <button
+                data-method="email"
+            >
+                Gmail
+            </button>
+
+        </div>
+
+
+        <input
+            id="destination"
+            placeholder="Enter mobile number"
+        >
+
+
+        <button
+            class="main-button full"
+            id="sendOtp"
+        >
+            Send 4-digit code
+        </button>
+
+
+        <div
+            id="otpArea"
+            class="hidden"
+        >
+
+            <input
+                id="otp"
+                maxlength="4"
+                placeholder="Enter 4-digit code"
+            >
+
+            <button
+                class="secondary-button full"
+                id="verifyOtp"
+            >
+                Verify
+            </button>
+
+            <p id="otpHint"></p>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- BOOKING MODAL -->
+
+<div
+    class="modal hidden"
+    id="bookingModal"
+>
+
+    <div class="booking-modal">
+
+        <button
+            class="close"
+            data-close
+        >
+            ×
+        </button>
+
+
+        <p class="eyebrow">
+            SELECT YOUR SEAT
+        </p>
+
+        <h2 id="bookingMovie">
+            Movie
+        </h2>
+
+        <p id="bookingShow"></p>
+
+
+        <div class="legend">
+
+            <span>
+                🟢 Available
+            </span>
+
+            <span>
+                🟡 Selected
+            </span>
+
+            <span>
+                🔴 Booked
+            </span>
+
+        </div>
+
+
+        <div class="big-screen">
+            SCREEN
+        </div>
+
+
+        <div
+            id="seatMap"
+            class="seat-map"
+        ></div>
+
+
+        <div class="booking-bottom">
+
+
+            <!-- SNACKS -->
+
+            <div class="snacks">
+
+                <p class="eyebrow">
+                    ADD SNACKS
+                </p>
+
+
+                <label>
+
+                    <input
+                        type="checkbox"
+                        value="Popcorn"
+                        data-price="120"
+                    >
+
+                    Popcorn
+
+                    <b>
+                        ₹120
+                    </b>
+
+                </label>
+
+
+                <label>
+
+                    <input
+                        type="checkbox"
+                        value="Nachos"
+                        data-price="150"
+                    >
+
+                    Nachos
+
+                    <b>
+                        ₹150
+                    </b>
+
+                </label>
+
+
+                <label>
+
+                    <input
+                        type="checkbox"
+                        value="Cola"
+                        data-price="80"
+                    >
+
+                    Cola
+
+                    <b>
+                        ₹80
+                    </b>
+
+                </label>
+
+
+                <small>
+                    Take snacks and get
+                    <strong>
+                        5% OFF
+                    </strong>
+                </small>
+
+            </div>
+
+
+            <!-- SUMMARY -->
+
+            <div class="summary">
+
+                <p>
+                    Seats:
+                    <b id="sumSeats">
+                        —
+                    </b>
+                </p>
+
+                <p>
+                    Tickets:
+                    <b id="sumTickets">
+                        ₹0
+                    </b>
+                </p>
+
+                <p>
+                    Snacks:
+                    <b id="sumSnacks">
+                        ₹0
+                    </b>
+                </p>
+
+                <p>
+                    Snack discount:
+                    <b id="sumDiscount">
+                        ₹0
+                    </b>
+                </p>
+
+                <hr>
+
+                <h3>
+                    Total:
+                    <span id="sumTotal">
+                        ₹0
+                    </span>
+                </h3>
+
+
+                <button
+                    class="main-button full"
+                    id="checkoutBtn"
+                >
+                    Continue
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- CUSTOMER DETAILS -->
+
+<div
+    class="modal hidden"
+    id="customerModal"
+>
+
+    <div class="modal-box">
+
+        <button
+            class="close"
+            data-close
+        >
+            ×
+        </button>
+
+        <p class="eyebrow">
+            CHECKOUT
+        </p>
+
+        <h2>
+            Your details
+        </h2>
+
+
+        <input
+            id="customerName"
+            placeholder="Full name"
+        >
+
+        <input
+            id="customerEmail"
+            placeholder="Gmail"
+        >
+
+        <input
+            id="customerPhone"
+            placeholder="Mobile number"
+        >
+
+
+        <button
+            class="main-button full"
+            id="payBtn"
+        >
+            Pay ₹0 — Demo
+        </button>
+
+
+        <p class="demo">
+            Demo payment only.
+            No real money will be charged.
+        </p>
+
+    </div>
+
+</div>
+
+
+
+<!-- TICKET -->
+
+<div
+    class="modal hidden"
+    id="ticketModal"
+>
+
+    <div class="ticket">
+
+        <button
+            class="close"
+            data-close
+        >
+            ×
+        </button>
+
+        <p class="eyebrow">
+            BOOKING CONFIRMED
+        </p>
+
+        <h2>
+            Your ticket is ready 🎉
+        </h2>
+
+        <div id="ticketContent"></div>
+
+    </div>
+
+</div>
+
+
+<script src="/socket.io/socket.io.js"></script>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
